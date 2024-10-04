@@ -1,0 +1,12 @@
+D:\Users\space\source\repos\New folder\bin\Debug\net8.0\ConsoleApp1.exe
+D:\Users\space\source\repos\New folder\bin\Debug\net8.0\ConsoleApp1.deps.json
+D:\Users\space\source\repos\New folder\bin\Debug\net8.0\ConsoleApp1.runtimeconfig.json
+D:\Users\space\source\repos\New folder\bin\Debug\net8.0\ConsoleApp1.dll
+D:\Users\space\source\repos\New folder\bin\Debug\net8.0\ConsoleApp1.pdb
+D:\Users\space\source\repos\New folder\obj\Debug\net8.0\ConsoleApp1.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\space\source\repos\New folder\obj\Debug\net8.0\ConsoleApp1.csproj.CoreCompileInputs.cache
+D:\Users\space\source\repos\New folder\obj\Debug\net8.0\ConsoleApp1.dll
+D:\Users\space\source\repos\New folder\obj\Debug\net8.0\refint\ConsoleApp1.dll
+D:\Users\space\source\repos\New folder\obj\Debug\net8.0\ConsoleApp1.pdb
+D:\Users\space\source\repos\New folder\obj\Debug\net8.0\ConsoleApp1.genruntimeconfig.cache
+D:\Users\space\source\repos\New folder\obj\Debug\net8.0\ref\ConsoleApp1.dll

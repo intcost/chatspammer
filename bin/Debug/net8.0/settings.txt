@@ -1,0 +1,9 @@
+{
+    "phrases": [
+        "Free Github project https://github.com/intcost/chatspammer",
+        "Chat Spammer CS2 | dr NHA & intcost",
+        "Open source CS2 ChatSpammer Github: intcost/chatspammer",
+        "Open eyes"
+    ],
+    "interval": 0.5
+}
