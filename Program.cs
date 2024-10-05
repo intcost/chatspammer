@@ -202,20 +202,20 @@ Console.WriteLine("\nНажмите любую клавишу для выход�
 Console.ReadKey();
 }
 
-private static string fileName="settings.txt";
-private static string filePath=Path.Combine(AppDomain.CurrentDomain.BaseDirectory, fileName);
+private static string fileName = "settings.txt";
+    private static string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, fileName);
 
     private static void SaveSettings()
     {
         var settings = new Settings { phrases = FinnishPhrases, interval = interval };
-        string json = System.Text.Json.JsonSerializer.Serialize(settings, new System.Text.Json.JsonSerializerOptions { WriteIndented = true });
-        File.WriteAllText(filePath, json);
+        string settingsString = $"phrases={string.Join(",", settings.phrases)};interval={settings.interval}";
+        File.WriteAllText(filePath, settingsString);
     }
 
     private class Settings
     {
-        public string[] phrases { get; set; } // Измените на строчную букву
-        public double interval { get; set; } // Измените на строчную букву
+        public string[] phrases { get; set; }
+        public double interval { get; set; }
     }
 
 
@@ -232,18 +232,27 @@ private static string filePath=Path.Combine(AppDomain.CurrentDomain.BaseDirector
                 return;
             }
 
-            string jsonData = File.ReadAllText(filePath);
-            var jsonObject = System.Text.Json.JsonSerializer.Deserialize<Settings>(jsonData);
-            FinnishPhrases = jsonObject.phrases;
-            interval = jsonObject.interval;
+            string settingsString = File.ReadAllText(filePath);
+            var settings = new Settings();
+            var parts = settingsString.Split(';');
+
+            foreach (var part in parts)
+            {
+                var keyValue = part.Split('=');
+                if (keyValue[0] == "phrases")
+                    settings.phrases = keyValue[1].Split(',');
+                if (keyValue[0] == "interval")
+                    settings.interval = double.Parse(keyValue[1]);
+            }
+
+            FinnishPhrases = settings.phrases;
+            interval = settings.interval;
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Ошибка при загрузке фраз: {ex.Message}");
+            Console.WriteLine($"Ошибка при загрузке настроек: {ex.Message}");
             FinnishPhrases = new string[0];
             interval = 0.5;
         }
     }
-
-
 }
